@@ -1,0 +1,53 @@
+<!-- event-list.component.html -->
+<div class="p-4">
+    <div class="h-20 p-2">
+      <p class="text-5xl	font-size: 3rem" >Event Management</p>
+    </div>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg fit-content">
+      <div class="flex items-center justify-between flex-column flex-wrap md:flex-row  bg-white">
+       
+        <div class="relative p-4">
+          <button class="bg-purple-500 hover:bg-purple-300 text-white px-4 py-2 rounded-lg shadow ml-2" >
+            + Add
+          </button>
+        </div>
+      </div>
+  
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-100 ">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-center">Title</th>
+          <th scope="col" class="px-6 py-3 text-center">Description</th>
+          <th scope="col" class="px-6 py-3 text-center">Date</th>
+          <th scope="col" class="px-6 py-3 text-center">Location</th>
+          <th scope="col" class="px-6 py-3 text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- <tr *ngIf="filteredApplications.length === 0">
+          <td colspan="6" class="text-center text-lg font-bold py-5 bg-gray-100 border border-gray-300">No application found</td>
+        </tr> -->
+        <tr *ngFor="let event of events" class="bg-white  border-b ">
+            <td class="px-6 py-4 text-center">{{ event.Title }}</td>
+            <td class="px-6 py-4 text-center">{{ event.Description }}</td>
+            <td class="px-6 py-4 text-center">{{ event.Date }}</td>
+            <td class="px-6 py-4 text-center">{{ event.Location }}</td>
+
+
+            <td class="text-center">
+                <button class="bg-orange-400 hover:bg-orange-300 text-white px-4 py-2 rounded-lg shadow ml-2" >
+                  Edit
+                </button>
+                <button class="bg-red-500 hover:bg-red-300 text-white px-4 py-2 rounded-lg shadow ml-2" >
+                  Delete
+                </button>
+              </td>
+
+        </tr>
+         
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
